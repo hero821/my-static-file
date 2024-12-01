@@ -35,12 +35,12 @@ var getLocation = function (options) {
 }
 
 setInterval(function () {
-    if(index == undefined){
+    if (index == undefined) {
         index = window.prompt('请输入编号：\n' + geoArr.map(function (value, index) {
             return index + '：' + value.name;
         }).join('\n'));
-        console.log('>>> 地点选择了：', geoArr[index].name);
     }
+    console.log('>>> 地点选择了：', geoArr[index].name);
     if (window.wx == undefined) {
         console.log('>>> window.wx is undefined');
         return;
