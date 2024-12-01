@@ -12,12 +12,7 @@ var geoArr = [
     {name: '北京|庄胜广场', lng: '116.375458', lat: '39.896526'}
 ];
 
-console.log('>>> 请选择地点...');
-var index = window.prompt('请输入编号：\n' + geoArr.map(function (value, index) {
-    return index + '：' + value.name;
-}).join('\n'));
-console.log('>>> 地点选择了：', geoArr[index].name);
-
+var index;
 var getLocation = function (options) {
     var lng = geoArr[index].lng;
     var lat = geoArr[index].lat;
@@ -40,6 +35,12 @@ var getLocation = function (options) {
 }
 
 setInterval(function () {
+    if(index == undefined){
+        index = window.prompt('请输入编号：\n' + geoArr.map(function (value, index) {
+            return index + '：' + value.name;
+        }).join('\n'));
+        console.log('>>> 地点选择了：', geoArr[index].name);
+    }
     if (window.wx == undefined) {
         console.log('>>> window.wx is undefined');
         return;
