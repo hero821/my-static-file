@@ -12,10 +12,11 @@ var geoArr = [
     {name: '北京|庄胜广场', lng: '116.375458', lat: '39.896526'}
 ];
 
+console.log('>>> 请选择地点...');
 var index = window.prompt('请输入编号：\n' + geoArr.map(function (value, index) {
     return index + '：' + value.name;
 }).join('\n'));
-console.log('>>> 选择了：', geoArr[index].name);
+console.log('>>> 地点选择了：', geoArr[index].name);
 
 var getLocation = function (options) {
     var lng = geoArr[index].lng;
